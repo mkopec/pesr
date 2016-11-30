@@ -5,17 +5,14 @@
     "description": "To rozszerzenie wymusi pokazanie średnich ocen w systemie iDziennik",
     "version": "1.0",
 
+    "content_scripts": [ {
+            "exclude_globs":    [  ],
+            "include_globs":    [ "*" ],
+            "js":               [ "skrypt.js" ],
+            "matches": [ "https://iuczniowie.pe.szczecin.pl/mod_panelRodzica/Oceny.aspx" ],
+            "run_at": "document_start"
+    } ],
 
-    "background": {
-        "scripts": [
-            "srednia.js"
-        ],
-        "persistent": true
-    },
-
-    "browser_action": {
-        "default_title": "Inject!"
-    },
     "permissions": [
         "https://*/*",
         "http://*/*",
